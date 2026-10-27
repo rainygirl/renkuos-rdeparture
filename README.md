@@ -36,8 +36,8 @@ that image has no TLS; use `http://` instead of `https://`.
 ## Airports
 
 Seoul Incheon (ICN), Tokyo Narita (NRT), Hong Kong (HKG), London Heathrow
-(LHR), Paris Charles de Gaulle (CDG), Milan Malpensa (MXP), Venice Marco Polo
-(VCE), New York JFK (JFK) and San Francisco (SFO). Pick one with the gear in the top right corner; the board remembers it.
+(LHR), Paris Charles de Gaulle (CDG), Milan Malpensa (MXP), Venice Marco Polo (VCE), New York JFK (JFK)
+and San Francisco (SFO). Pick one with the gear in the top right corner; the board remembers it.
 
 Each board shows its own local time, summer time included, and switches
 language every eight seconds:

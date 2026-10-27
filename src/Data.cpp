@@ -215,16 +215,15 @@ static const Route kMalpensa[] = {
 	{ "BER", "U2", 4572, 1 }, { "CPH", "SK", 688, 1 },
 };
 
-static const Route kVenezia[] = {
-	{ "ROM", "AZ", 1466, 3 }, { "NAP", "U2", 2783, 2 }, { "PMO", "U2", 2795, 1 },
-	{ "CTA", "U2", 2799, 1 }, { "PAR", "AF", 1527, 2 }, { "PAR", "U2", 3963, 1 },
-	{ "LON", "BA", 2585, 2 }, { "LON", "U2", 8442, 2 }, { "FRA", "LH", 327, 2 },
-	{ "MUC", "LH", 1843, 2 }, { "AMS", "KL", 1648, 2 }, { "MAD", "IB", 3247, 1 },
-	{ "BCN", "VY", 6503, 2 }, { "LIS", "TP", 841, 1 }, { "ATH", "A3", 667, 1 },
-	{ "IST", "TK", 1868, 2 }, { "ZRH", "LX", 1673, 1 }, { "VIE", "OS", 531, 1 },
-	{ "CPH", "SK", 1695, 1 }, { "DUB", "EI", 422, 1 }, { "BER", "U2", 5292, 1 },
-	{ "DXB", "EK", 135, 1 }, { "DOH", "QR", 125, 1 }, { "NYC", "DL", 220, 1 },
-	{ "NYC", "UA", 168, 1 },
+static const Route kMarcoPolo[] = {
+	{ "ROM", "AZ", 1462, 3 }, { "NAP", "U2", 2721, 2 }, { "PMO", "U2", 2769, 1 },
+	{ "CTA", "U2", 2765, 1 }, { "PAR", "AF", 1427, 2 }, { "PAR", "U2", 4642, 1 },
+	{ "LON", "BA", 2585, 2 }, { "LON", "U2", 8642, 1 }, { "FRA", "LH", 327, 2 },
+	{ "MUC", "LH", 1975, 2 }, { "AMS", "KL", 1660, 2 }, { "MAD", "IB", 3237, 1 },
+	{ "BCN", "VY", 6409, 1 }, { "LIS", "TP", 841, 1 }, { "ATH", "A3", 661, 1 },
+	{ "IST", "TK", 1868, 1 }, { "ZRH", "LX", 1671, 1 }, { "VIE", "OS", 534, 1 },
+	{ "CPH", "SK", 1690, 1 }, { "BER", "U2", 5016, 1 }, { "DXB", "EK", 136, 1 },
+	{ "DOH", "QR", 132, 1 }, { "NYC", "DL", 205, 1 }, { "NYC", "UA", 169, 1 },
 };
 
 static const Route kKennedy[] = {
@@ -295,6 +294,7 @@ const Airport kAirports[] = {
 		60, DST_EU, "AB", 1, 60, false, ROUTES(kMalpensa),
 		{ LANG_IT, LANG_EN, LANG_DEST }, 3 },
 	{ "VCE", LANG_IT, "VENEZIA MARCO POLO", "VENICE MARCO POLO AIRPORT",
+		60, DST_EU, "ABC", 1, 40, false, ROUTES(kMarcoPolo),
 		60, DST_EU, "", 1, 58, false, ROUTES(kVenezia),
 		{ LANG_IT, LANG_EN, LANG_DEST }, 3 },
 	{ "JFK", LANG_EN, "NEW YORK JFK", "",
