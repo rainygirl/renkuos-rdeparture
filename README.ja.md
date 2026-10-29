@@ -142,8 +142,8 @@ make install
 使われます。コードは C++98 なので、32 ビット x86 (gcc2) ハイブリッドでも既定の
 `g++` でビルドできます。
 
-Docker のある作業用マシンでは `tools/cross-build.sh all` で `dist/x86/` (gcc2)、
-`dist/x86_64/`、`dist/arm64/` をクロスビルドします。
+Docker のある作業用マシンでは `tools/cross-build.sh all` で `dist/x86/` (gcc2 ではなく
+ハイブリッドの副 x86 コンパイラ)、`dist/x86_64/`、`dist/arm64/` をクロスビルドします。
 
 `RDepartures --snapshot board.png --size 1600x768 --airport CDG` は画面なしで
 案内板を描いてファイルに保存します。案内板が起動中だとそちらに渡されるので、

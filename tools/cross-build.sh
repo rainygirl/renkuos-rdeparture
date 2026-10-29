@@ -2,7 +2,7 @@
 # Cross-compiles R Departures on a workstation with Docker, into
 # dist/<arch>/RDepartures, resources attached.
 #
-#   tools/cross-build.sh x86       gcc2, haiku/cross-compiler:x86_gcc2h-r1beta4
+#   tools/cross-build.sh x86       the hybrid's x86 gcc, haiku/cross-compiler:x86_gcc2h-r1beta4
 #   tools/cross-build.sh x86_64    haiku/cross-compiler:x86_64-r1beta4
 #   tools/cross-build.sh arm64     container with a Haiku arm64 build tree
 #   tools/cross-build.sh all
@@ -10,9 +10,10 @@
 #   ARM64_CONTAINER   default haiku-builder
 #   ARM64_GENERATED   default /root/renku-arm64-work/generated.arm64
 #
-# The code is C++98, so the x86 build uses the hybrid's primary gcc2 and runs
-# on an x86_gcc2 system without its secondary architecture. rc and xres come
-# from the arm64 tree's host tools, which handle any ELF.
+# The x86 build uses the hybrid's secondary x86 compiler, not its primary gcc2,
+# so on an x86_gcc2 system it runs on the x86 secondary architecture (the
+# rdepartures_x86 package). rc and xres come from the arm64 tree's host tools,
+# which handle any ELF.
 set -e
 
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
@@ -45,15 +46,11 @@ build()
 	mkdir -p "$OUT"
 	case "$ARCH" in
 	x86)
-		# The image's gcc2 looks for headers in its own sys-include, which
-		# it does not have; the Haiku headers are under /system/develop.
 		( cd "$HERE" && tar cf - src ) \
 			| docker run --rm -i --platform linux/amd64 haiku/cross-compiler:x86_gcc2h-r1beta4 sh -c "
 				set -e
-				ln -s /system/develop/headers /tools/cross-tools-x86_gcc2/i586-pc-haiku/sys-include
 				mkdir -p /work && cd /work && tar xf -
-				/tools/cross-tools-x86_gcc2/bin/i586-pc-haiku-g++ $FLAGS \
-					-B/system/develop/lib/ -L/system/develop/lib $LIBS >&2
+				/tools/cross-tools-x86/bin/i586-pc-haiku-g++ $FLAGS $LIBS >&2
 				tar cf - RDepartures" \
 			| tar xf - -C "$OUT"
 		;;

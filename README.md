@@ -151,7 +151,8 @@ next restart. The code is C++98, so the default `g++` builds it on a 32-bit
 x86 (gcc2) hybrid as well.
 
 On a workstation with Docker, `tools/cross-build.sh all` cross-builds
-`dist/x86/` (gcc2), `dist/x86_64/` and `dist/arm64/`.
+`dist/x86/` (with the x86 hybrid's secondary x86 compiler, not gcc2),
+`dist/x86_64/` and `dist/arm64/`.
 
 `RDepartures --snapshot board.png --size 1600x768 --airport CDG` renders the
 board off-screen and saves it, for checking it without a screen. Quit a

@@ -154,7 +154,8 @@ riavvio successivo. Il codice è C++98, quindi il `g++` predefinito lo compila
 anche su un ibrido x86 a 32 bit (gcc2).
 
 Su una macchina con Docker, `tools/cross-build.sh all` compila in modo
-incrociato `dist/x86/` (gcc2), `dist/x86_64/` e `dist/arm64/`.
+incrociato `dist/x86/` (con il compilatore x86 secondario dell'ibrido, non gcc2),
+`dist/x86_64/` e `dist/arm64/`.
 
 `RDepartures --snapshot board.png --size 1600x768 --airport VCE` disegna il
 tabellone fuori schermo e lo salva, per controllarlo senza uno schermo. Prima
