@@ -295,7 +295,6 @@ const Airport kAirports[] = {
 		{ LANG_IT, LANG_EN, LANG_DEST }, 3 },
 	{ "VCE", LANG_IT, "VENEZIA MARCO POLO", "VENICE MARCO POLO AIRPORT",
 		60, DST_EU, "ABC", 1, 40, false, ROUTES(kMarcoPolo),
-		60, DST_EU, "", 1, 58, false, ROUTES(kVenezia),
 		{ LANG_IT, LANG_EN, LANG_DEST }, 3 },
 	{ "JFK", LANG_EN, "NEW YORK JFK", "",
 		-5 * 60, DST_US, "B", 20, 55, false, ROUTES(kKennedy),
